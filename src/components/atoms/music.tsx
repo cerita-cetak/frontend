@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { FaMusic } from "react-icons/fa";
 
@@ -10,7 +12,11 @@ export default function Music() {
       <i className="text-black text-2xl">
         <FaMusic />
       </i>
-      <audio src="/music/sample-music.mp3" autoPlay></audio>
+      <audio
+        src="/music/sample-music.mp3"
+        autoPlay
+        onPause={(p) => console.log("pause")}
+      ></audio>
     </div>
   );
 }
