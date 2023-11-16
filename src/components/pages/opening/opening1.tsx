@@ -35,7 +35,7 @@ export default function Opening1() {
               </p>
             </div>
           </div>
-          <button className="text-center p-5 text-xl uppercase bg-sky-500">
+          <button className="text-center p-5 text-xl uppercase bg-yellow-400">
             Hadir
           </button>
         </section>
