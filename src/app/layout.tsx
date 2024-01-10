@@ -2,6 +2,7 @@ import Navbar from "@/components/organisms/navbar";
 import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Footer from "@/components/organisms/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative container">
+      <body className="container relative">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
