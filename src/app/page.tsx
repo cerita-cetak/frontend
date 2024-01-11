@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function Page() {
   return (
-    <main className=" space-y-20">
+    <main className="space-y-36">
       {/* header */}
       <section className="grid h-[500px] grid-cols-2">
         <div className="space-y-8 self-center px-8">
