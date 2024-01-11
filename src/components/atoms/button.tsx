@@ -10,7 +10,7 @@ interface tButton
       ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
-    "children" | "id"
+    "children" | "id" | "disabled" | "type" | "hidden" | "style"
   > {
   variant?: "contained" | "text" | "outlined" | "text-only";
   navigate?: string;
