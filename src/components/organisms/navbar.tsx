@@ -11,7 +11,7 @@ export default function Navbar() {
   const ref = useClickOutside(() => setShow(false));
 
   return (
-    <header className="relative flex items-center justify-between py-4">
+    <header className="container relative flex items-center justify-between py-4">
       <div className="flex items-center gap-8">
         <Link href={"/"} className="text-2xl font-bold">
           Logo

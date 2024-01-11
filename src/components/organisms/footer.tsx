@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className=" py-20">
+    <footer className=" container py-20">
       <div className="flex items-center justify-between py-10">
         <div className="text-2xl font-semibold">Logo</div>
         <ul className="flex items-center gap-3">
