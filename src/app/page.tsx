@@ -1,9 +1,10 @@
 import { fakerID_ID as faker } from "@faker-js/faker";
 import { BiSolidParty } from "react-icons/bi";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function Page() {
   return (
-    <main className="space-y-20">
+    <main className="mb-20 space-y-20">
       {/* header */}
       <section className="grid h-[500px] grid-cols-2">
         <div className="space-y-8 self-center px-8">
@@ -401,9 +402,112 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section>cta</section>
-      <section>new letter</section>
-      <section>faq</section>
+
+      {/* CTA */}
+      <section
+        style={{ backgroundImage: `url(${faker.image.urlLoremFlickr()})` }}
+        className="relative space-y-8 bg-cover bg-fixed bg-no-repeat p-8 text-white"
+      >
+        <h2 className="text-4xl font-bold">Design your perfect invitation</h2>
+        <p className="">
+          Choose from our most popular themes and event packages to create a
+          stunning invitation.
+        </p>
+        <div className="flex items-center gap-3">
+          <button className="bg-black px-4 py-2">Start</button>
+          <button className="border border-white px-4 py-2">Explore</button>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-10 py-10">
+        <div className="flex flex-col items-center gap-4">
+          <h2 className="text-4xl font-bold">FAQs</h2>
+          <p>
+            Find answers to common questions about invitation customization and
+            the order process.
+          </p>
+        </div>
+        <ul>
+          <li className="space-y-3 border-y border-black py-3">
+            <div className="peer flex items-center justify-between">
+              <p className="font-medium">How to customize invitations?</p>
+              <i>
+                <IoIosArrowDown />
+              </i>
+            </div>
+            <div>
+              To customize invitations, simply select a theme, add your event
+              details, and choose any additional customization options
+              available. Once you&apos;re satisfied with the design, you can
+              proceed to place your order.
+            </div>
+          </li>
+          <li className="space-y-3 border-b border-black py-3">
+            <div className="peer flex items-center justify-between">
+              <p className="font-medium">
+                Can I preview my design before ordering?
+              </p>
+              <i>
+                <IoIosArrowDown />
+              </i>
+            </div>
+            <div>
+              To customize invitations, simply select a theme, add your event
+              details, and choose any additional customization options
+              available. Once you&apos;re satisfied with the design, you can
+              proceed to place your order.
+            </div>
+          </li>
+          <li className="space-y-3 border-b border-black py-3">
+            <div className="peer flex items-center justify-between">
+              <p className="font-medium">How long does shipping take?</p>
+              <i>
+                <IoIosArrowDown />
+              </i>
+            </div>
+            <div>
+              To customize invitations, simply select a theme, add your event
+              details, and choose any additional customization options
+              available. Once you&apos;re satisfied with the design, you can
+              proceed to place your order.
+            </div>
+          </li>
+          <li className="space-y-3 border-b border-black py-3">
+            <div className="peer flex items-center justify-between">
+              <p className="font-medium">Can I cancel my order?</p>
+              <i>
+                <IoIosArrowDown />
+              </i>
+            </div>
+            <div>
+              To customize invitations, simply select a theme, add your event
+              details, and choose any additional customization options
+              available. Once you&apos;re satisfied with the design, you can
+              proceed to place your order.
+            </div>
+          </li>
+          <li className="space-y-3 border-b border-black py-3">
+            <div className="peer flex items-center justify-between">
+              <p className="font-medium">What payment methods are accepted?</p>
+              <i>
+                <IoIosArrowDown />
+              </i>
+            </div>
+            <div>
+              To customize invitations, simply select a theme, add your event
+              details, and choose any additional customization options
+              available. Once you&apos;re satisfied with the design, you can
+              proceed to place your order.
+            </div>
+          </li>
+        </ul>
+        <div className="flex flex-col items-center gap-4 pt-10">
+          <h2 className="text-2xl font-bold">Still have questions?</h2>
+          <p>Contact our support team for further assistance.</p>
+          <button className="border border-black px-4 py-2">Contact</button>
+        </div>
+      </section>
     </main>
   );
 }
