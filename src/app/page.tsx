@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className="space-y-36">
       {/* header */}
-      <section className="grid h-[500px] grid-cols-2">
+      <section className="grid  h-[80vh] grid-cols-2 ">
         <div className="space-y-8 self-center px-8">
           <h2 className="text-4xl font-bold">
             Discover Beautiful Invitation Themes for Every Occasion
