@@ -19,6 +19,6 @@ const config: Config = {
       padding: "2rem",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
 export default config;
