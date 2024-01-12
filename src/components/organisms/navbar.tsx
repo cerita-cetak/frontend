@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import SubNavbar from "./sub-navbar";
 import useClickOutside from "@/hooks/click-outside";
+import Button from "../atoms/button";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -12,7 +13,8 @@ export default function Navbar() {
 
   return (
     <header className="container relative flex items-center justify-between py-4">
-      <div className="flex items-center gap-8">
+      {/* tablet above */}
+      <div className="hidden items-center gap-8 md:flex">
         <Link href={"/"} className="text-2xl font-bold">
           Logo
         </Link>
@@ -21,10 +23,10 @@ export default function Navbar() {
             <Link href={"#"}>Home</Link>
           </li>
           <li>
-            <Link href={"#"}>About us</Link>
+            <Link href={"#service"}>Services</Link>
           </li>
           <li>
-            <Link href={"#"}>Services</Link>
+            <Link href={"#pricing"}>Pricing</Link>
           </li>
           <li>
             <button
@@ -40,14 +42,14 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="flex items-center gap-3">
-        <button className="rounded-sm border border-black px-4 py-1">
-          Sign Up
-        </button>
-        <button className="rounded-sm bg-black px-4 py-1 text-white">
-          Login
-        </button>
+      <div className="hidden md:block">
+        <Button>Login</Button>
       </div>
+
+      {/* mobile */}
+      <nav className="container fixed inset-x-0 bottom-3 bg-yellow-500 md:hidden">
+        hai iam nav mobile
+      </nav>
       <SubNavbar show={show} />
     </header>
   );
