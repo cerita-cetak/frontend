@@ -7,18 +7,15 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function Page() {
   return (
-    <main className="space-y-36">
+    <main className="space-y-20 md:space-y-28 lg:space-y-36">
       {/* header */}
-      <section className="container grid  h-[80vh] grid-cols-2 ">
-        <div className="space-y-8 self-center px-8">
+      <section className="container grid grid-cols-1 gap-8 md:h-[80vh] md:grid-cols-2">
+        <div className="space-y-4 self-center md:space-y-8 md:px-8">
           <Title title="Discover Beautiful Invitation Themes for Every Occasion" />
-          <Tagline
-            tagline="Create personalized invitations effortlessly with our wide range of
-            free themes and event packages."
-          />
+          <Tagline tagline="Create personalized invitations effortlessly with our wide range of free themes and event packages." />
           <Button>Get Started</Button>
         </div>
-        <div className="columns-2 space-x-6 overflow-hidden bg-slate-200">
+        <div className="columns-3 space-x-6 overflow-hidden bg-slate-200 md:columns-2">
           <picture>
             <img
               src={faker.image.urlLoremFlickr({ category: "party" })}
@@ -65,7 +62,7 @@ export default function Page() {
       </section>
 
       {/* Feature */}
-      <section className="container grid h-[500px] grid-cols-2">
+      <section className="container grid grid-cols-1 gap-4 md:h-[500px] md:grid-cols-2">
         <div className="space-y-8 self-center">
           <Title
             title="Create stunning online invitations with Cerita Cetak&lsquo;s
@@ -93,7 +90,7 @@ export default function Page() {
 
       {/* Feature list */}
       <section className="container flex flex-col gap-14">
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="space-y-4">
             <p>Discover</p>
             <Title title="Unleash Your Creativity with Cerita Cetak" />
@@ -107,7 +104,7 @@ export default function Page() {
             out."
           />
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           <div className="space-y-3">
             <i className="text-3xl">
               <BiSolidParty />
@@ -153,7 +150,7 @@ export default function Page() {
       </section>
 
       {/* about */}
-      <section className="container grid grid-cols-2 gap-8">
+      {/* <section className="container grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="space-y-4 self-center">
           <Title title="Transforming events into unforgettable experiences with our online invitation services." />
           <Tagline
@@ -168,15 +165,15 @@ export default function Page() {
         <picture>
           <img src={faker.image.avatar()} alt="" className="h-full w-full" />
         </picture>
-      </section>
+      </section> */}
 
       {/* product list */}
       <section className="container space-y-10">
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 text-center">
           <Title title="Products" />
           <Tagline tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col items-center gap-3">
             <picture>
               <img
@@ -190,9 +187,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -207,9 +204,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -224,9 +221,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -241,9 +238,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -258,9 +255,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -275,9 +272,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -292,9 +289,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-3">
             <picture>
@@ -309,9 +306,9 @@ export default function Page() {
               <small>{faker.commerce.product()}</small>
               <p>{faker.commerce.price()}</p>
             </div>
-            <button className="w-full rounded-md border border-black py-2">
+            <Button variant="outlined" width="full">
               Add to cart
-            </button>
+            </Button>
           </div>
         </div>
         <div className="flex justify-center">
@@ -326,7 +323,7 @@ export default function Page() {
           <Title title="Pricing package" />
           <Tagline tagline="Choose the plan that suits your needs" />
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="divide-y divide-neutral-500 rounded-md border border-black p-8">
             <div className="pb-4">
               <p className="font-medium">Basic Plan</p>
@@ -336,9 +333,7 @@ export default function Page() {
               <p className="text-2xl font-bold">
                 {faker.commerce.price({ symbol: "Rp", min: 999 })}
               </p>
-              <button className="w-full bg-black px-4 py-2 text-white">
-                Get Started
-              </button>
+              <Button width="full">Get Started</Button>
             </div>
             <div className="pt-4">
               <ul>
@@ -358,9 +353,7 @@ export default function Page() {
               <p className="text-2xl font-bold">
                 {faker.commerce.price({ symbol: "Rp", min: 999 })}
               </p>
-              <button className="w-full bg-black px-4 py-2 text-white">
-                Get Started
-              </button>
+              <Button width="full">Get Started</Button>
             </div>
             <div className="pt-4">
               <ul>
@@ -380,9 +373,7 @@ export default function Page() {
               <p className="text-2xl font-bold">
                 {faker.commerce.price({ symbol: "Rp", min: 999 })}
               </p>
-              <button className="w-full bg-black px-4 py-2 text-white">
-                Get Started
-              </button>
+              <Button width="full">Get Started</Button>
             </div>
             <div className="pt-4">
               <ul>
@@ -397,7 +388,7 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section
+      {/* <section
         style={{ backgroundImage: `url(${faker.image.urlLoremFlickr()})` }}
         className="relative bg-cover bg-fixed bg-no-repeat p-8 text-white"
       >
@@ -412,10 +403,10 @@ export default function Page() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
-      <section className="container space-y-10 py-10">
+      {/* <section className="container space-y-10 py-10">
         <div className="flex flex-col items-center gap-4">
           <Title title="FAQs" />
           <Tagline tagline="Find answers to common questions about invitation customization and the order process." />
@@ -499,7 +490,7 @@ export default function Page() {
           <Tagline tagline="Contact our support team for further assistance." />
           <Button variant="outlined">Contact</Button>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

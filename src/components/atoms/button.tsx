@@ -10,7 +10,7 @@ interface tButton
       ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
-    "children" | "id" | "disabled" | "type" | "hidden" | "style"
+    "children" | "id" | "disabled" | "type" | "hidden" | "style" | "className"
   > {
   variant?: "contained" | "text" | "outlined" | "text-only";
   navigate?: string;
@@ -34,6 +34,7 @@ export default function Button({
   color = "black",
   roundedfull,
   width = "fit",
+  className,
   ...props
 }: tButton) {
   const { push } = useRouter();
@@ -86,6 +87,7 @@ export default function Button({
         width == "fit" ? "w-fit" : "w-full",
         variants,
         sizes,
+        className,
       )}
     >
       {props.children}

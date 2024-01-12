@@ -10,8 +10,8 @@ import {
 
 export default function Footer() {
   return (
-    <footer className=" container py-20">
-      <div className="flex items-center justify-between py-10">
+    <footer className="container py-20">
+      <div className="flex flex-col justify-between gap-8 py-10 md:flex-row md:items-center">
         <div className="text-2xl font-semibold">Logo</div>
         <ul className="flex items-center gap-3">
           <li className="font-medium">
@@ -59,11 +59,10 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="flex items-center justify-center gap-3 border-t border-black py-4">
+      <div className="flex flex-col items-center justify-center gap-3 border-t border-black py-4 md:flex-row">
         <small>© 2023 Cerita Cetak. All rights reserved.</small>
         <small>Privacy Policy</small>
         <small>Terms of Service</small>
-        <small>Cookie Settings</small>
       </div>
     </footer>
   );
