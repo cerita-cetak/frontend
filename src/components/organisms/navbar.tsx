@@ -47,8 +47,15 @@ export default function Navbar() {
       </div>
 
       {/* mobile */}
-      <nav className="container fixed inset-x-0 bottom-3 bg-yellow-500 md:hidden">
-        hai iam nav mobile
+      <nav className="container fixed inset-x-0 bottom-3 md:hidden">
+        <div className="rounded-md bg-slate-200 p-3 shadow-sm">
+          <ul className="flex items-center justify-between gap-2 ">
+            <li>Home</li>
+            <li>Services</li>
+            <li>Pricing</li>
+            <li>Events</li>
+          </ul>
+        </div>
       </nav>
       <SubNavbar show={show} />
     </header>

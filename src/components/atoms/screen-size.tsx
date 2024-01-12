@@ -14,7 +14,7 @@ export default function ScreenSize() {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-5 rounded-full bg-green-500 px-3 py-1 text-white">
+    <div className="fixed bottom-20 right-5 rounded-full bg-green-500 px-3 py-1 text-white">
       {screen}
     </div>
   );
