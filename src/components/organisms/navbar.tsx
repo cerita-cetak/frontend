@@ -6,13 +6,21 @@ import { IoIosArrowDown } from "react-icons/io";
 import SubNavbar from "./sub-navbar";
 import useClickOutside from "@/hooks/click-outside";
 import Button from "../atoms/button";
+import { usePathname } from "next/navigation";
+import cn from "classnames";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const ref = useClickOutside(() => setShow(false));
+  const pathname = usePathname();
 
   return (
-    <header className="container relative flex items-center justify-between py-4">
+    <header
+      className={cn(
+        "container relative flex items-center justify-between py-4",
+        pathname.includes("login") && "hidden",
+      )}
+    >
       {/* tablet above */}
       <div className="hidden items-center gap-8 md:flex">
         <Link href={"/"} className="text-2xl font-bold">
@@ -43,7 +51,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="hidden md:block">
-        <Button>Login</Button>
+        <Button navigate="/login">Login</Button>
       </div>
 
       {/* mobile */}

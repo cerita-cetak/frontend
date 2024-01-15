@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import {
   FaFacebook,
@@ -7,10 +10,15 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
+import cn from "classnames";
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
-    <footer className="container py-20">
+    <footer
+      className={cn("container py-20", pathname.includes("/login") && "hidden")}
+    >
       <div className="flex flex-col items-center justify-between gap-8 py-10 md:flex-row md:items-center">
         <div className="text-2xl font-semibold">Logo</div>
         <ul className="flex items-center gap-3">
