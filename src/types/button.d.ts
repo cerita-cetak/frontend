@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+
 export interface tButton
   extends Pick<
     DetailedHTMLProps<
@@ -9,14 +11,8 @@ export interface tButton
   variant?: "contained" | "text" | "outlined" | "text-only";
   navigate?: string;
   size?: "S" | "M" | "L" | "XL";
+  shadow?: "S" | "M" | "L" | "XL";
   width?: "full" | "fit";
-  color?:
-    | "success"
-    | "warning"
-    | "danger"
-    | "disabled"
-    | "info"
-    | "white"
-    | "black";
+  color?: "success" | "warning" | "danger" | "info";
   roundedfull?: boolean;
 }

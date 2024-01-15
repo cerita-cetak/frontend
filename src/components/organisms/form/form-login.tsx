@@ -58,7 +58,9 @@ export default function FormLogin() {
             />
           </div>
           <div className="space-y-3">
-            <Button width="full">Let&apos;s Explore</Button>
+            <Button color="warning" variant="outlined" width="full">
+              Let&apos;s Explore
+            </Button>
             <Button
               type="button"
               width="full"

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import cn from "classnames";
 import { tButton } from "@/types/button";
 
@@ -9,50 +8,68 @@ export default function Button({
   variant = "contained",
   navigate = "#",
   size = "M",
-  color = "black",
+  color,
   roundedfull,
   width = "fit",
   className,
+  shadow,
   ...props
 }: tButton) {
   const { push } = useRouter();
 
   const variants = cn({
     /* ------------------------------- CONTAINEED ------------------------------- */
-    // success
-    // warning
-    // danger
-    // disabled
-    // info
-    "bg-black text-white active:bg-black/80": variant == "contained", //black
-    // white
+
+    "bg-emerald-500 text-white active:bg-emerald-600":
+      variant == "contained" && color == "success", // success
+    "bg-amber-500 text-white active:bg-amber-600":
+      variant == "contained" && color == "warning", // warning
+    "bg-rose-500 text-white active:bg-rose-600":
+      variant == "contained" && color == "danger", // danger
+    " bg-teal-500 text-white active:bg-teal-600":
+      variant == "contained" && color == "info", // info
+    "bg-black text-white active:bg-black/80": variant == "contained" && !color, //black
 
     /* -------------------------------- OUTLINED -------------------------------- */
 
-    // success
-    // warning
-    // danger
-    // disabled
-    // info
-    "text-black border border-black hover:bg-black hover:text-white active:bg-black/80":
-      variant == "outlined" && color == "black", //black
+    "border border-neutral-500 text-black hover:border-neutral-600 active:scale-95":
+      variant == "outlined" && !color, // default
+    "border border-emerald-500 text-emerald-500 hover:border-emerald-600 hover:text-emerald-600 active:scale-95":
+      variant == "outlined" && color == "success", // success
+    "border border-amber-500 text-amber-500 hover:border-amber-600 hover:text-amber-600 active:scale-95":
+      variant == "outlined" && color == "warning", // warning
+    "border border-rose-500 text-rose-500 hover:border-rose-600 hover:text-rose-600 active:scale-95":
+      variant == "outlined" && color == "danger", // danger
 
-    "text-white border border-white hover:bg-white hover:text-black active:bg-white/80":
-      variant == "outlined" && color == "white", //white
+    "border border-teal-500 text-teal-500 hover:border-teal-600 hover:text-teal-600 active:scale-95":
+      variant == "outlined" && color == "info", // info
 
     /* ---------------------------------- TEXT ---------------------------------- */
-    // success
-    // warning
-    // danger
-    // disabled
-    // info
-    // black
-    // white
+    "bg-none text-emerald-500 hover:text-emerald-600 active:scale-95":
+      variant == "text" && color == "success", // success
+    "bg-none text-amber-500 hover:text-amber-600 active:scale-95":
+      variant == "text" && color == "warning", // warning
+    "bg-none text-rose-500 hover:text-rose-600 active:scale-95":
+      variant == "text" && color == "danger", // danger
+    "bg-none text-teal-500 hover:text-teal-600 active:scale-95":
+      variant == "text" && color == "info", // info
+    "bg-none text-black hover:text-black active:scale-95":
+      variant == "text" && !color, // black
+
+    /* -------------------------------- TEXT ONLY ------------------------------- */
+    "bg-none text-black": variant == "text-only",
   });
 
   const sizes = cn({
     "p-0": variant == "text-only",
     "px-4 py-2": size == "M",
+  });
+
+  const shadows = cn({
+    "shadow-md": shadow == "M",
+    "shadow-sm": shadow == "S",
+    "shadow-lg": shadow == "L",
+    "shadow-xl": shadow == "XL",
   });
 
   return (
@@ -66,6 +83,7 @@ export default function Button({
         variants,
         sizes,
         className,
+        shadows,
       )}
     >
       {props.children}
