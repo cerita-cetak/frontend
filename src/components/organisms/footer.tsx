@@ -11,13 +11,17 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import cn from "classnames";
+import { blocklist } from "@/libs/block-list-pathname";
 
 export default function Footer() {
   const pathname = usePathname();
 
   return (
     <footer
-      className={cn("container py-20", pathname.includes("/login") && "hidden")}
+      className={cn(
+        "container py-20",
+        blocklist.includes(pathname) && "hidden",
+      )}
     >
       <div className="flex flex-col items-center justify-between gap-8 py-10 md:flex-row md:items-center">
         <div className="text-2xl font-semibold">Logo</div>

@@ -8,6 +8,7 @@ import useClickOutside from "@/hooks/click-outside";
 import Button from "../atoms/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
+import { blocklist } from "@/libs/block-list-pathname";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -18,7 +19,7 @@ export default function Navbar() {
     <header
       className={cn(
         "container relative flex items-center justify-between py-4",
-        pathname.includes("login") && "hidden",
+        blocklist.includes(pathname) && "hidden",
       )}
     >
       {/* tablet above */}
