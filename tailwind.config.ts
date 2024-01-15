@@ -7,13 +7,6 @@ const config: Config = {
   ],
   theme: {
     extend: {},
-    // screens: {
-    //   mobile_s: "320px",
-    //   mobile_l: "425px",
-    //   tablet: "768px",
-    //   laptop: "1024px",
-    //   desktop: "1440px",
-    // },
     container: {
       center: true,
       padding: "2rem",
