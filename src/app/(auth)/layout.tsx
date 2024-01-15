@@ -26,6 +26,11 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
           </picture>
         </div>
         <div className="mx-auto w-5/12">{children}</div>
+        <div className="absolute inset-x-0 bottom-5 flex flex-col items-center justify-center gap-3 py-4 md:flex-row">
+          <small>© 2023 Cerita Cetak. All rights reserved.</small>
+          <small>Privacy Policy</small>
+          <small>Terms of Service</small>
+        </div>
       </section>
     </main>
   );
