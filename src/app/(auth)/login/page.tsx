@@ -1,5 +1,6 @@
 import React from "react";
 import { fakerID_ID as faker } from "@faker-js/faker";
+import FormLogin from "@/components/organisms/form/form-login";
 
 export default function Page() {
   return (
@@ -21,6 +22,7 @@ export default function Page() {
           <p className="text-2xl font-medium"> Login</p>
           <small>Wellcome to Cerita Cetak</small>
         </div>
+        <FormLogin />
       </div>
     </section>
   );

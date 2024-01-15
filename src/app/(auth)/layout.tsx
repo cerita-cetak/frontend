@@ -3,7 +3,7 @@ import { fakerID_ID as faker } from "@faker-js/faker";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <main className="container flex h-screen justify-between">
+    <main className="flex h-screen justify-between">
       <section
         className="w-4/12 shrink-0 bg-cover bg-no-repeat"
         style={{
