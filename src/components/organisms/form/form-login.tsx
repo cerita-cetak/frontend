@@ -24,7 +24,11 @@ export default function FormLogin() {
       })}
     >
       {() => (
-        <Form className="space-y-3 transition-all duration-100">
+        <Form className="space-y-8 transition-all duration-100">
+          <div>
+            <p className="text-2xl font-medium"> Login</p>
+            <small>Wellcome to Cerita Cetak</small>
+          </div>
           <InputFormik
             placeholder="Email address"
             type="email"
@@ -37,6 +41,7 @@ export default function FormLogin() {
             name="password"
             type="password"
             icon={{ start: <RiLockPasswordFill /> }}
+            wfull
           />
           <Button>Submit</Button>
         </Form>

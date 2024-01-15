@@ -17,11 +17,7 @@ export default function Page() {
           />
         </picture>
       </div>
-      <div className="flex flex-col gap-3 p-8">
-        <div>
-          <p className="text-2xl font-medium"> Login</p>
-          <small>Wellcome to Cerita Cetak</small>
-        </div>
+      <div className="mx-auto w-5/12">
         <FormLogin />
       </div>
     </section>
