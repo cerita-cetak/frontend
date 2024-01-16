@@ -9,54 +9,65 @@ import Button from "../atoms/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { blocklist } from "@/libs/block-list-pathname";
-import useIntersectionObserver from "@/hooks/intersection-observer";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
   const clickOutside = useClickOutside(() => setShow(false));
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScroll(document.documentElement.scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
       className={cn(
-        "container relative flex items-center justify-between py-4 ",
+        "container sticky top-0 transition-all duration-300",
         blocklist.includes(pathname) && "hidden",
+        isScroll && "bg-white shadow-md shadow-neutral-200",
       )}
     >
       {/* tablet above */}
-      <div className="hidden items-center gap-8 md:flex">
-        <Link href={"/"} className="text-2xl font-bold">
-          Logo
-        </Link>
-        <ul className="flex items-center gap-4">
-          <li>
-            <Link href={"#"}>Home</Link>
-          </li>
-          <li>
-            <Link href={"#service"}>Services</Link>
-          </li>
-          <li>
-            <Link href={"#pricing"}>Pricing</Link>
-          </li>
-          <li>
-            <button
-              ref={clickOutside}
-              className="group/event flex items-center gap-3"
-              onClick={() => setShow(!show)}
-            >
-              <p>Events</p>
-              <i>
-                <IoIosArrowDown />
-              </i>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div className="hidden md:block">
-        <Button navigate="/login" color="info">
+      <nav className="hidden items-center justify-between gap-8 py-4 md:flex">
+        <div className="flex items-center gap-5">
+          <Link href={"/"} className="text-2xl font-bold">
+            Logo
+          </Link>
+          <ul className="flex items-center gap-4">
+            <li>
+              <Link href={"#"}>Home</Link>
+            </li>
+            <li>
+              <Link href={"#service"}>Services</Link>
+            </li>
+            <li>
+              <Link href={"#pricing"}>Pricing</Link>
+            </li>
+            <li>
+              <button
+                ref={clickOutside}
+                className="group/event flex items-center gap-3"
+                onClick={() => setShow(!show)}
+              >
+                <p>Events</p>
+                <i>
+                  <IoIosArrowDown />
+                </i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <Button navigate="/login" color="info" className="hidden md:block">
           Login
         </Button>
-      </div>
+      </nav>
 
       {/* mobile */}
       <nav className="container fixed inset-x-0 bottom-3 md:hidden">
@@ -69,7 +80,9 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
-      <SubNavbar show={show} />
+      <div className="relative">
+        <SubNavbar show={show} />
+      </div>
     </header>
   );
 }

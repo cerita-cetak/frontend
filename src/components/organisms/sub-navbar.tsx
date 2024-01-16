@@ -10,7 +10,7 @@ export default function SubNavbar({ show }: { show?: boolean }) {
   return (
     <div
       className={cn(
-        "absolute inset-x-0 left-0 top-0 flex translate-y-16 justify-between overflow-hidden rounded-b-md bg-white shadow-md transition-all duration-500",
+        "absolute inset-x-0 left-0 top-0 flex justify-between overflow-hidden rounded-b-md bg-white shadow-md transition-all duration-500",
         show ? "max-h-[1000px]" : "max-h-0",
       )}
       id="sub-navbar"
