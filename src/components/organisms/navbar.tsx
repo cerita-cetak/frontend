@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import SubNavbar from "./sub-navbar";
 import useClickOutside from "@/hooks/click-outside";
@@ -9,16 +9,17 @@ import Button from "../atoms/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { blocklist } from "@/libs/block-list-pathname";
+import useIntersectionObserver from "@/hooks/intersection-observer";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-  const ref = useClickOutside(() => setShow(false));
+  const clickOutside = useClickOutside(() => setShow(false));
   const pathname = usePathname();
 
   return (
     <header
       className={cn(
-        "container relative flex items-center justify-between py-4",
+        "container relative flex items-center justify-between py-4 ",
         blocklist.includes(pathname) && "hidden",
       )}
     >
@@ -39,7 +40,7 @@ export default function Navbar() {
           </li>
           <li>
             <button
-              ref={ref}
+              ref={clickOutside}
               className="group/event flex items-center gap-3"
               onClick={() => setShow(!show)}
             >

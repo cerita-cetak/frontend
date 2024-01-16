@@ -9,7 +9,10 @@ export default function Page() {
   return (
     <main className="space-y-20 md:space-y-28 lg:space-y-36">
       {/* header */}
-      <section className="container grid grid-cols-1 gap-8 md:h-[80vh] md:grid-cols-2">
+      <section
+        id="header"
+        className="container grid grid-cols-1 gap-8 md:h-[80vh] md:grid-cols-2"
+      >
         <div className="space-y-4 self-center md:space-y-8 md:px-8">
           <Title title="Discover Beautiful Invitation Themes for Every Occasion" />
           <Tagline tagline="Create personalized invitations effortlessly with our wide range of free themes and event packages." />

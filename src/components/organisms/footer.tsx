@@ -18,6 +18,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="footer"
       className={cn(
         "container py-20",
         blocklist.includes(pathname) && "hidden",
