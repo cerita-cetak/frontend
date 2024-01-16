@@ -29,7 +29,7 @@ export default function FormSignup() {
       {() => (
         <Form className="space-y-8 transition-all duration-100">
           <div>
-            <p className="text-2xl font-medium"> Signup</p>
+            <p className="text-2xl font-bold"> Signup</p>
             <small>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et,
               rerum.
@@ -58,7 +58,9 @@ export default function FormSignup() {
           </div>
 
           <div className="space-y-3">
-            <Button width="full">Get started</Button>
+            <Button width="full" color="info">
+              Get started
+            </Button>
             <Button
               type="button"
               width="full"
@@ -73,7 +75,7 @@ export default function FormSignup() {
           </div>
           <div className="flex items-center justify-center gap-2">
             <p className="font-semibold text-neutral-500">Have an account ?</p>
-            <Link href={"/login"} className="font-bold">
+            <Link href={"/login"} className="font-bold text-indigo-800">
               Login
             </Link>
           </div>

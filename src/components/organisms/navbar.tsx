@@ -52,7 +52,9 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="hidden md:block">
-        <Button navigate="/login">Login</Button>
+        <Button navigate="/login" color="info">
+          Login
+        </Button>
       </div>
 
       {/* mobile */}

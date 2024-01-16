@@ -33,8 +33,8 @@ export default function FormLogin() {
       {({ values, setFieldValue }) => (
         <Form className="space-y-8 transition-all duration-100">
           <div>
-            <p className="text-2xl font-medium"> Login</p>
-            <small>Wellcome to Cerita Cetak</small>
+            <p className="text-2xl font-bold "> Login</p>
+            <small className="">Wellcome to Cerita Cetak</small>
           </div>
           <div className="space-y-3">
             <InputFormik
@@ -58,7 +58,9 @@ export default function FormLogin() {
             />
           </div>
           <div className="space-y-3">
-            <Button width="full">Let&apos;s Explore</Button>
+            <Button width="full" color="info">
+              Let&apos;s Explore
+            </Button>
             <Button
               type="button"
               width="full"
@@ -75,7 +77,7 @@ export default function FormLogin() {
             <p className="font-semibold text-neutral-500">
               Don&apos;t have an account ?
             </p>
-            <Link href={"/signup"} className="font-bold">
+            <Link href={"/signup"} className="font-bold text-indigo-500">
               Signup
             </Link>
           </div>
