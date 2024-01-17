@@ -1,4 +1,4 @@
-import Button from "@/components/atoms/button";
+import Button from "@/components/atoms/button/button";
 import Tagline from "@/components/atoms/tag-line";
 import Title from "@/components/atoms/title";
 import HeaderHome from "@/components/organisms/header-home";

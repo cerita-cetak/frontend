@@ -16,3 +16,15 @@ export interface tButton
   color?: "success" | "warning" | "danger" | "info";
   roundedfull?: boolean;
 }
+
+export interface tButtonNav
+  extends Pick<
+    DetailedHTMLProps<
+      ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >,
+    "children" | "id" | "disabled" | "type" | "hidden" | "style" | "className"
+  > {
+  navigate?: string;
+  name: string;
+}

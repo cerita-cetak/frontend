@@ -2,7 +2,7 @@ import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import Title from "../atoms/title";
 import Tagline from "../atoms/tag-line";
-import Button from "../atoms/button";
+import Button from "../atoms/button/button";
 import { fakerID_ID as faker } from "@faker-js/faker";
 
 export default function HeaderHome() {

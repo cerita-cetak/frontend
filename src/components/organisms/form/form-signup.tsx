@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/atoms/button";
+import Button from "@/components/atoms/button/button";
 import InputFormik from "@/components/mollecules/form-formik/input-formik";
 import { Form, Formik } from "formik";
 import Link from "next/link";

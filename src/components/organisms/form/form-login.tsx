@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Formik, Form } from "formik";
-import Button from "@/components/atoms/button";
+import Button from "@/components/atoms/button/button";
 import InputFormik from "@/components/mollecules/form-formik/input-formik";
 import { object, string } from "yup";
 import { FaWhatsapp } from "react-icons/fa";
