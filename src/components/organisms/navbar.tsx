@@ -12,6 +12,7 @@ import { blocklist } from "@/libs/block-list-pathname";
 import NavButton from "../atoms/button/nav-button";
 import NavMobile from "../mollecules/button/nav-mobile";
 import { MdOutlineMenu } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -72,14 +73,22 @@ export default function Navbar() {
           Login
         </Button>
         <button
-          className="md:hidden"
+          className={cn(
+            "transition-all duration-300 md:hidden",
+            showNavMobile && "z-10 text-white",
+          )}
           onClick={() => {
             setShowNavMobile(true);
             document.body.classList.add("overflow-hidden");
           }}
         >
-          <i>
-            <MdOutlineMenu />
+          <i
+            className={cn(
+              "transition-all duration-300",
+              showNavMobile && "text-xl",
+            )}
+          >
+            {showNavMobile ? <IoClose /> : <MdOutlineMenu />}
           </i>
         </button>
       </nav>
