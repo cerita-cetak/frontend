@@ -110,7 +110,7 @@ export default function Navbar() {
           </ul>
         </div>
       </nav> */}
-      <div className="relative">
+      <div className="relative hidden md:block">
         <SubNavbar show={show} />
       </div>
     </header>

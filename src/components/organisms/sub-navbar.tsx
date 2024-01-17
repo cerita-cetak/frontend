@@ -6,9 +6,16 @@ import { BiSolidParty } from "react-icons/bi";
 import Link from "next/link";
 // import { fakerID_ID as faker } from "@faker-js/faker";
 
-export default function SubNavbar({ show }: { show?: boolean }) {
+export default function SubNavbar({
+  show,
+  ref,
+}: {
+  show?: boolean;
+  ref?: any;
+}) {
   return (
     <div
+      ref={ref}
       className={cn(
         "absolute inset-x-0 left-0 top-0 flex justify-between overflow-hidden rounded-b-md bg-white shadow-md transition-all duration-500",
         show ? "max-h-[1000px]" : "max-h-0",
