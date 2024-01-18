@@ -34,13 +34,14 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "container sticky top-0 transition-all duration-300",
+        "sticky top-0 transition-all duration-300",
         blocklist.includes(pathname) && "hidden",
-        isScroll && "bg-white shadow-md shadow-neutral-200",
+        isScroll &&
+          "shadow-neutral-200 dark:bg-colors-background-11 bg-colors-background-1 shadow-md shadow-colors-background-5",
       )}
     >
       {/* tablet above */}
-      <nav className="flex items-center justify-between gap-8 py-4">
+      <nav className="container flex items-center justify-between gap-8 py-4">
         <div className="flex items-center gap-5">
           <Link href={"/"} className="text-2xl font-bold">
             Logo
@@ -75,7 +76,7 @@ export default function Navbar() {
         <button
           className={cn(
             "transition-all duration-300 md:hidden",
-            showNavMobile && "z-10 text-white",
+            showNavMobile && "text-white z-10",
           )}
           onClick={() => {
             setShowNavMobile(true);
@@ -119,7 +120,7 @@ export default function Navbar() {
           </ul>
         </div>
       </nav> */}
-      <div className="relative hidden md:block">
+      <div className=" relative hidden  md:block">
         <SubNavbar show={show} />
       </div>
     </header>
