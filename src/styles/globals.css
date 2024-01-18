@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply dark:bg-background-11 bg-background-1 text-text-1;
+  @apply dark:bg-background-15 bg-background-1 text-text-1;
 }
