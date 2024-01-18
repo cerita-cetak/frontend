@@ -6,8 +6,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
-    colors: {
+    extend: {
       colors: {
         text: {
           1: "#e3e5e2",
@@ -32,6 +31,11 @@ const config: Config = {
           8: "#2b2d2b",
           9: "#141614",
           10: "#030303",
+          11: "#030d02",
+          12: "#020a01",
+          13: "#020701",
+          14: "#010501",
+          15: "#010300",
         },
         primary: {
           1: "#effded",
