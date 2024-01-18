@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/organisms/footer";
 import ScreenSize from "@/components/atoms/screen-size";
+import NextThemeProvider from "@/components/providers/next-theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="relative">
-        <Navbar />
-        {children}
-        <Footer />
-        <ScreenSize />
+        <NextThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+          <ScreenSize />
+        </NextThemeProvider>
       </body>
     </html>
   );

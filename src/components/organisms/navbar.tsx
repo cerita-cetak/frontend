@@ -13,13 +13,17 @@ import NavButton from "../atoms/button/nav-button";
 import NavMobile from "../mollecules/button/nav-mobile";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const { theme, setTheme } = useTheme();
   const [showNavMobile, setShowNavMobile] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const clickOutside = useClickOutside(() => setShow(false));
   const pathname = usePathname();
+
+  console.log("needs ", theme);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +41,7 @@ export default function Navbar() {
         "sticky top-0 transition-all duration-300",
         blocklist.includes(pathname) && "hidden",
         isScroll &&
-          "shadow-neutral-200 dark:bg-colors-background-11 bg-colors-background-1 shadow-md shadow-colors-background-5",
+          "shadow-neutral-200 dark:bg-background-15 bg-background-1 shadow-md shadow-colors-background-5",
       )}
     >
       {/* tablet above */}
@@ -69,6 +73,11 @@ export default function Navbar() {
               </button>
             </li>
           </ul>
+        </div>
+
+        <div className="space-x-3">
+          <button onClick={() => setTheme("dark")}>dark</button>
+          <button onClick={() => setTheme("light")}>light</button>
         </div>
         <Button navigate="/login" color="info" className="hidden md:block">
           Login
@@ -102,24 +111,7 @@ export default function Navbar() {
           document.body.classList.remove("overflow-hidden");
         }}
       />
-      {/* <nav className="container fixed inset-x-0 bottom-3 md:hidden">
-        <div className="rounded-lg bg-slate-800 p-3 shadow-sm">
-          <ul className="flex items-center justify-between gap-2 ">
-            <li>
-              <NavButton name="Home" />
-            </li>
-            <li>
-              <NavButton name="Services" />
-            </li>
-            <li>
-              <NavButton name="Pricing" />
-            </li>
-            <li>
-              <NavButton name="Events" />
-            </li>
-          </ul>
-        </div>
-      </nav> */}
+
       <div className=" relative hidden  md:block">
         <SubNavbar show={show} />
       </div>

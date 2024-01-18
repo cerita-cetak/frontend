@@ -80,10 +80,22 @@ export default function Button({
         "transition-all duration-300",
         roundedfull ? "rounded-full" : "rounded-md",
         width == "fit" ? "w-fit" : "w-full",
-        variants,
+        // variants,
         sizes,
         className,
         shadows,
+        {
+          "dark:bg-primary-10 dark:text-black dark:active:bg-primary-9":
+            variant == "contained" && color == "success", // success
+          "bg-amber-500 text-white active:bg-amber-600":
+            variant == "contained" && color == "warning", // warning
+          "bg-rose-500 text-white active:bg-rose-600":
+            variant == "contained" && color == "danger", // danger
+          " dark:bg-secondary-10 dark:active:bg-secondary-9 dark:text-text-7":
+            variant == "contained" && color == "info", // info
+          "bg-black text-white active:bg-black/80":
+            variant == "contained" && !color, //black
+        },
       )}
     >
       {props.children}
