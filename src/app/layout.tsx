@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="relative">
+      <body className=" relative">
         <NextThemeProvider
           attribute="class"
           defaultTheme="system"
