@@ -9,15 +9,16 @@ import Button from "../atoms/button/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { blocklist } from "@/libs/block-list-pathname";
-import NavButton from "../atoms/button/nav-button";
+
 import NavMobile from "../mollecules/button/nav-mobile";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
+import DarkLight from "../atoms/button/dark-light";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const [showNavMobile, setShowNavMobile] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const clickOutside = useClickOutside(() => setShow(false));
@@ -38,10 +39,10 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 transition-all duration-300",
+        "sticky top-0 select-none transition-all duration-300",
         blocklist.includes(pathname) && "hidden",
         isScroll &&
-          "shadow-neutral-200 dark:bg-background-15 bg-background-1 shadow-md shadow-colors-background-5",
+          "shadow-colors-background-5 bg-background-1 shadow-md shadow-neutral-200 dark:bg-background-15",
       )}
     >
       {/* tablet above */}
@@ -75,17 +76,16 @@ export default function Navbar() {
           </ul>
         </div>
 
-        <div className="space-x-3">
-          <button onClick={() => setTheme("dark")}>dark</button>
-          <button onClick={() => setTheme("light")}>light</button>
+        <div className="flex items-center gap-3">
+          <DarkLight />
+          <Button navigate="/login" color="info" className="hidden md:block">
+            Login
+          </Button>
         </div>
-        <Button navigate="/login" color="info" className="hidden md:block">
-          Login
-        </Button>
         <button
           className={cn(
             "transition-all duration-300 md:hidden",
-            showNavMobile && "text-white z-10",
+            showNavMobile && "z-10 text-white",
           )}
           onClick={() => {
             setShowNavMobile(true);
