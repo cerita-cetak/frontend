@@ -41,8 +41,7 @@ export default function Navbar() {
       className={cn(
         "sticky top-0 select-none transition-all duration-300",
         blocklist.includes(pathname) && "hidden",
-        isScroll &&
-          "shadow-colors-background-5 bg-background-1 shadow-md shadow-neutral-200 dark:bg-background-15",
+        isScroll && "bg-main-50 shadow-md shadow-neutral-200 dark:bg-main-950",
       )}
     >
       {/* tablet above */}
