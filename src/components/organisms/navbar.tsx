@@ -25,11 +25,16 @@ export default function Navbar() {
   const clickOutside = useClickOutside(() => setShow(false));
   const pathname = usePathname();
 
-  console.log("needs ", theme);
+  // console.log("needs ", theme);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScroll(document.documentElement.scrollTop > 0);
+      setIsScroll(document.documentElement.scrollTop > 711);
+      // console.log(
+      //   "needs scrolltop",
+      //   document.documentElement.scrollTop,
+      //   document.documentElement.scrollTop > 711,
+      // );
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -40,9 +45,10 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 select-none transition-all duration-300",
+        "fixed top-0 select-none transition-all duration-500",
         blocklist.includes(pathname) && "hidden",
-        isScroll && "bg-main-50 shadow-md shadow-neutral-200 dark:bg-main-950",
+        isScroll &&
+          "inset-x-0 bg-main-50 shadow-sm shadow-white dark:bg-main-950",
       )}
     >
       {/* tablet above */}
@@ -51,7 +57,7 @@ export default function Navbar() {
           <Link
             href={"/"}
             className={cn(
-              " aspect-square  transition-all duration-300",
+              " aspect-square transition-all duration-300 ",
               isScroll ? "w-10" : "w-14",
             )}
             title="Cerita cetak"
@@ -61,7 +67,7 @@ export default function Navbar() {
               src={"/logo.png"}
               width={1000}
               height={1000}
-              className="rounded-full shadow"
+              className="rounded-full shadow dark:bg-white"
             />
           </Link>
           <ul className="hidden items-center gap-4 md:flex">
