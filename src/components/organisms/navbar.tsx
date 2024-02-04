@@ -15,6 +15,7 @@ import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import DarkLight from "../atoms/button/dark-light";
+import Image from "next/image";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -47,8 +48,21 @@ export default function Navbar() {
       {/* tablet above */}
       <nav className="container flex items-center justify-between gap-8 py-4">
         <div className="flex items-center gap-5">
-          <Link href={"/"} className="text-2xl font-bold">
-            Logo
+          <Link
+            href={"/"}
+            className={cn(
+              " aspect-square  transition-all duration-300",
+              isScroll ? "w-10" : "w-14",
+            )}
+            title="Cerita cetak"
+          >
+            <Image
+              alt="logo"
+              src={"/logo.png"}
+              width={1000}
+              height={1000}
+              className="rounded-full shadow"
+            />
           </Link>
           <ul className="hidden items-center gap-4 md:flex">
             <li>
