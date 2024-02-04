@@ -17,7 +17,7 @@ export default function SubNavbar({
     <div
       ref={ref}
       className={cn(
-        " dark:bg-background-15 bg-background-1 dark:shadow-background-5 absolute inset-x-0 left-0 top-0 overflow-hidden shadow-md transition-all duration-500",
+        " absolute inset-x-0 left-0 top-0 overflow-hidden bg-main-50 shadow-md transition-all duration-500 dark:bg-main-950 dark:shadow-main-50",
         show ? "max-h-[1000px]" : "max-h-0",
       )}
       id="sub-navbar"
@@ -71,9 +71,9 @@ export default function SubNavbar({
             </div>
           </div>
         </div>
-        <div className="bg-background-3 dark:bg-background-11 w-6/12 shrink-0 space-y-3 p-4">
+        <div className="w-6/12 shrink-0 space-y-3 bg-main-50 p-4 dark:bg-main-900">
           <p className="font-medium">Get Inspired from Blog</p>
-          <div className="hover:bg-slate-200 flex cursor-pointer gap-3">
+          <div className="flex cursor-pointer gap-3 hover:bg-slate-200">
             <picture>
               <img
                 src="https://picsum.photos/200"
@@ -91,7 +91,7 @@ export default function SubNavbar({
               </small>
             </div>
           </div>
-          <div className="hover:bg-slate-200 flex cursor-pointer gap-3">
+          <div className="flex cursor-pointer gap-3 hover:bg-slate-200">
             <picture>
               <img
                 src="https://picsum.photos/200"

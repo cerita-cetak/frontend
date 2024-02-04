@@ -20,11 +20,14 @@ export default function NavMobile({ open, onClickOutSide }: tNavMobile) {
   return (
     <nav
       className={cn(
-        "fixed inset-0 flex overflow-hidden bg-black/50 transition-all duration-300 md:hidden",
+        "fixed inset-0 flex overflow-hidden bg-black/50 backdrop-blur-sm transition-all duration-300 dark:bg-main-900/50 md:hidden",
         open ? "max-w-[100%]" : "max-w-[0%]",
       )}
     >
-      <div className="relative h-full w-10/12 bg-white p-8" ref={element}>
+      <div
+        className="relative h-full w-10/12 bg-white p-8 dark:bg-main-950"
+        ref={element}
+      >
         {/* <button className="absolute right-8 top-3" onClick={onClickOutSide}>
           <i className="text-xl">
             <IoClose />
