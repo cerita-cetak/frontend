@@ -8,7 +8,7 @@ export default function Button({
   variant = "contained",
   navigate = "#",
   size = "M",
-  color,
+  color = "primary",
   roundedfull,
   width = "fit",
   className,
@@ -20,15 +20,20 @@ export default function Button({
   const variants = cn({
     /* ------------------------------- CONTAINEED ------------------------------- */
 
-    "bg-emerald-500 text-white active:bg-emerald-600":
+    "dark:bg-primary-10 dark:active:bg-primary-9 dark:text-black":
       variant == "contained" && color == "success", // success
     "bg-amber-500 text-white active:bg-amber-600":
       variant == "contained" && color == "warning", // warning
     "bg-rose-500 text-white active:bg-rose-600":
       variant == "contained" && color == "danger", // danger
-    " bg-teal-500 text-white active:bg-teal-600":
+    "bg-accent-800 text-white dark:bg-accent-600":
       variant == "contained" && color == "info", // info
-    "bg-black text-white active:bg-black/80": variant == "contained" && !color, //black
+    "bg-primary-500 text-black shadow-lg hover:shadow-primary-300 active:bg-primary-600":
+      variant == "contained" && color == "primary", //primary
+    "bg-secondary-100 shadow-lg hover:shadow-secondary-100 active:bg-secondary-200 dark:bg-secondary-800 dark:hover:shadow-secondary-800":
+      variant == "contained" && color == "secondary", //secondary
+    "bg-black shadow-lg hover:shadow-black active:bg-secondary-200 ":
+      variant == "contained" && color == "black", //black
 
     /* -------------------------------- OUTLINED -------------------------------- */
 
@@ -77,25 +82,13 @@ export default function Button({
       {...props}
       onClick={() => push(navigate)}
       className={cn(
-        "transition-all duration-300",
+        "transition-all duration-300 hover:scale-105 active:scale-100",
         roundedfull ? "rounded-full" : "rounded-md",
         width == "fit" ? "w-fit" : "w-full",
-        // variants,
+        variants,
         sizes,
         className,
         shadows,
-        {
-          "dark:bg-primary-10 dark:text-black dark:active:bg-primary-9":
-            variant == "contained" && color == "success", // success
-          "bg-amber-500 text-white active:bg-amber-600":
-            variant == "contained" && color == "warning", // warning
-          "bg-rose-500 text-white active:bg-rose-600":
-            variant == "contained" && color == "danger", // danger
-          " dark:bg-secondary-10 dark:active:bg-secondary-9 dark:text-text-7":
-            variant == "contained" && color == "info", // info
-          "bg-black text-white active:bg-black/80":
-            variant == "contained" && !color, //black
-        },
       )}
     >
       {props.children}
