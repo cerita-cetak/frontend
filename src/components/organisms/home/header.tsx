@@ -11,11 +11,20 @@ export default function HeaderHome() {
       className="grid h-[800px] grid-cols-1 gap-8 overflow-hidden md:grid-cols-2"
     >
       <div className="space-y-4 py-64  md:space-y-8 md:px-8">
-        <Title title="Discover Beautiful Invitation Themes for Every Occasion" />
-        <Tagline tagline="Create personalized invitations effortlessly with our wide range of free themes and event packages." />
+        <Title
+          resetStyle
+          className="text-6xl font-bold"
+          title="Discover Beautiful Invitation Themes for Every Occasion"
+        />
+        <Tagline
+          className="text-xl"
+          tagline="Create personalized invitations effortlessly with our wide range of free themes and event packages."
+        />
         <div className="space-x-3">
-          <Button>Get Started</Button>
-          <Button color="secondary">Learn more</Button>
+          <Button size="L">Get Started</Button>
+          <Button size="L" color="secondary">
+            Learn more
+          </Button>
         </div>
       </div>
 
