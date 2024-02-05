@@ -1,7 +1,7 @@
 import Button from "@/components/atoms/button/button";
 import Tagline from "@/components/atoms/tag-line";
 import Title from "@/components/atoms/title";
-import HeaderHome from "@/components/organisms/header-home";
+import HeaderHome from "@/components/organisms/home/header";
 import { fakerID_ID as faker } from "@faker-js/faker";
 import { BiSolidParty } from "react-icons/bi";
 

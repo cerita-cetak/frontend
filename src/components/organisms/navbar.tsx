@@ -25,16 +25,9 @@ export default function Navbar() {
   const clickOutside = useClickOutside(() => setShow(false));
   const pathname = usePathname();
 
-  // console.log("needs ", theme);
-
   useEffect(() => {
     const handleScroll = () => {
-      setIsScroll(document.documentElement.scrollTop > 711);
-      // console.log(
-      //   "needs scrolltop",
-      //   document.documentElement.scrollTop,
-      //   document.documentElement.scrollTop > 711,
-      // );
+      setIsScroll(document.documentElement.scrollTop > 800);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -45,10 +38,9 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 select-none transition-all duration-500",
+        "fixed top-0 select-none bg-main-50 transition-all duration-500 dark:bg-main-950",
         blocklist.includes(pathname) && "hidden",
-        isScroll &&
-          "inset-x-0 bg-main-50 shadow-sm shadow-white dark:bg-main-950",
+        isScroll ? "inset-x-0  shadow-sm shadow-main-50 " : "w-6/12 ",
       )}
     >
       {/* tablet above */}
@@ -67,7 +59,7 @@ export default function Navbar() {
               src={"/logo.png"}
               width={1000}
               height={1000}
-              className="rounded-full shadow dark:bg-white"
+              className="rounded-full shadow dark:bg-main-50"
             />
           </Link>
           <ul className="hidden items-center gap-4 md:flex">
