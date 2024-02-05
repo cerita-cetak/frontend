@@ -1,9 +1,7 @@
 import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import Title from "../../atoms/title";
 import Tagline from "../../atoms/tag-line";
 import Button from "../../atoms/button/button";
-import { fakerID_ID as faker } from "@faker-js/faker";
 import Image from "next/image";
 
 export default function HeaderHome() {
@@ -15,7 +13,10 @@ export default function HeaderHome() {
       <div className="space-y-4 py-64  md:space-y-8 md:px-8">
         <Title title="Discover Beautiful Invitation Themes for Every Occasion" />
         <Tagline tagline="Create personalized invitations effortlessly with our wide range of free themes and event packages." />
-        <Button>Get Started</Button>
+        <div className="space-x-3">
+          <Button>Get Started</Button>
+          <Button color="secondary">Learn more</Button>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-8">

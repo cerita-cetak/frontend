@@ -13,7 +13,14 @@ export interface tButton
   size?: "S" | "M" | "L" | "XL";
   shadow?: "S" | "M" | "L" | "XL";
   width?: "full" | "fit";
-  color?: "success" | "warning" | "danger" | "info";
+  color?:
+    | "success"
+    | "warning"
+    | "danger"
+    | "info"
+    | "primary"
+    | "secondary"
+    | "black";
   roundedfull?: boolean;
 }
 

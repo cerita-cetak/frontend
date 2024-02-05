@@ -89,7 +89,11 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <DarkLight />
-          <Button navigate="/login" color="info" className="hidden md:block">
+          <Button
+            navigate="/login"
+            color="secondary"
+            className="hidden md:block"
+          >
             Login
           </Button>
         </div>
