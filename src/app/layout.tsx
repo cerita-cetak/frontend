@@ -6,6 +6,7 @@ import Footer from "@/components/organisms/footer";
 import ScreenSize from "@/components/atoms/screen-size";
 import NextThemeProvider from "@/components/providers/next-theme";
 import LiveChat from "@/components/providers/live-chat";
+import TawkChat from "@/components/providers/tawk";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="relative">
+        <TawkChat />
         <NextThemeProvider
           attribute="class"
           defaultTheme="system"

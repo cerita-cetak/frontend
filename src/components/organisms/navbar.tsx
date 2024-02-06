@@ -30,6 +30,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScroll(document.documentElement.scrollTop > 800);
     };
+    setIsScroll(document.documentElement.scrollTop > 800);
+    console.log("needs document ", document.readyState);
 
     window.addEventListener("scroll", handleScroll);
 
