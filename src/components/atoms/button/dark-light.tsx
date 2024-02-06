@@ -9,7 +9,9 @@ export default function DarkLight() {
   const [myTheme, setMyTheme] = useState<string>();
 
   useEffect(() => {
-    setMyTheme(theme);
+    setMyTheme(theme == "system" ? "dark" : theme);
+
+    console.log("needs ", theme);
   }, [theme]);
 
   return (

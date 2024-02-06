@@ -15,7 +15,6 @@ import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import DarkLight from "../atoms/button/dark-light";
-import Image from "next/image";
 import NavBtn from "../atoms/button/nav-btn";
 
 export default function Navbar() {
@@ -31,7 +30,6 @@ export default function Navbar() {
       setIsScroll(document.documentElement.scrollTop > 800);
     };
     setIsScroll(document.documentElement.scrollTop > 800);
-    console.log("needs document ", document.readyState);
 
     window.addEventListener("scroll", handleScroll);
 
@@ -41,7 +39,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 select-none bg-main-50 transition-all duration-500 dark:bg-main-950",
+        "fixed top-0 select-none bg-main-50 dark:bg-main-950",
         blocklist.includes(pathname) && "hidden",
         isScroll ? "inset-x-0  shadow-sm shadow-main-50 " : "w-6/12 ",
       )}
@@ -52,17 +50,18 @@ export default function Navbar() {
           <Link
             href={"/"}
             className={cn(
-              "aspect-square transition-all duration-300 ",
-              isScroll ? "w-10" : "w-14",
+              "bg-[url('/logo-dark.svg')] bg-contain bg-no-repeat transition-all duration-300 dark:bg-[url('/logo-light.svg')]",
+              isScroll ? "h-10 w-10" : "h-14 w-14",
             )}
             title="Cerita cetak"
           >
-            <Image
-              alt="logo"
-              src={theme == "dark" ? "/logo-light.svg" : "/logo-dark.svg"}
-              width={1000}
-              height={1000}
-            />
+            {/* <picture>
+              <img
+                src={theme == "dark" ? "/logo-light.svg" : "/logo-dark.svg"}
+                alt="logo"
+              />
+            </picture> */}
+            {/* <Image alt="logo" src={} width={1000} height={1000} /> */}
           </Link>
           <NavBtn onHover={() => setShow(true)} onLeft={() => setShow(false)} />
         </div>
