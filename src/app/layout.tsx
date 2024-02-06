@@ -23,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="relative">
-        <LiveChat />
         <NextThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,6 +34,7 @@ export default function RootLayout({
           <Footer />
           {/* <ScreenSize /> */}
         </NextThemeProvider>
+        {/* <LiveChat /> */}
       </body>
     </html>
   );
