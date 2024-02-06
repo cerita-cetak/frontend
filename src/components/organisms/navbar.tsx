@@ -16,6 +16,7 @@ import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import DarkLight from "../atoms/button/dark-light";
 import Image from "next/image";
+import NavBtn from "../atoms/button/nav-btn";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -49,42 +50,19 @@ export default function Navbar() {
           <Link
             href={"/"}
             className={cn(
-              " aspect-square transition-all duration-300 ",
+              "aspect-square transition-all duration-300 ",
               isScroll ? "w-10" : "w-14",
             )}
             title="Cerita cetak"
           >
             <Image
               alt="logo"
-              src={"/logo.png"}
+              src={theme == "dark" ? "/logo-light.svg" : "/logo-dark.svg"}
               width={1000}
               height={1000}
-              className="rounded-full shadow dark:bg-main-50"
             />
           </Link>
-          <ul className="hidden items-center gap-4 md:flex">
-            <li>
-              <Link href={"#"}>Home</Link>
-            </li>
-            <li>
-              <Link href={"#service"}>Services</Link>
-            </li>
-            <li>
-              <Link href={"#pricing"}>Pricing</Link>
-            </li>
-            <li>
-              <button
-                ref={clickOutside}
-                className="group/event flex items-center gap-3"
-                onClick={() => setShow(!show)}
-              >
-                <p>Events</p>
-                <i>
-                  <IoIosArrowDown />
-                </i>
-              </button>
-            </li>
-          </ul>
+          <NavBtn onHover={() => setShow(true)} onLeft={() => setShow(false)} />
         </div>
 
         <div className="flex items-center gap-3">

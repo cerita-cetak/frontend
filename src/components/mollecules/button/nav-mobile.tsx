@@ -11,14 +11,23 @@ import { BiSolidParty } from "react-icons/bi";
 type tNavMobile = {
   open?: boolean;
   onClickOutSide: () => void;
+  // onHover: () => void;
+  // onLeft: () => void;
 };
 
-export default function NavMobile({ open, onClickOutSide }: tNavMobile) {
+export default function NavMobile({
+  open,
+  onClickOutSide,
+  // onHover,
+  // onLeft,
+}: tNavMobile) {
   const [show, setShow] = useState(true);
   const element = useClickOutside(onClickOutSide);
 
   return (
     <nav
+      // onMouseLeave={() => onLeft()}
+      // onMouseOver={() => onHover()}
       className={cn(
         "fixed inset-0 flex overflow-hidden bg-black/50 backdrop-blur-sm transition-all duration-300 dark:bg-main-900/50 md:hidden",
         open ? "max-w-[100%]" : "max-w-[0%]",

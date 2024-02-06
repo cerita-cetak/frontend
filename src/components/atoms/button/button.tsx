@@ -67,9 +67,9 @@ export default function Button({
 
   const sizes = cn({
     "p-0": variant == "text-only",
-    "px-4 py-2": size == "M",
-    "px-8 py-3 text-xl": size == "L",
-    "px-10 py-3 text-2xl": size == "XL",
+    "px-4 py-2 font-medium": size == "M",
+    "px-8 py-3 text-xl font-semibold": size == "L",
+    "px-10 py-3 text-2xl font-semibold": size == "XL",
   });
 
   const shadows = cn({
