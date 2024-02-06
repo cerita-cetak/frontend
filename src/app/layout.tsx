@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/organisms/footer";
 import ScreenSize from "@/components/atoms/screen-size";
 import NextThemeProvider from "@/components/providers/next-theme";
+import LiveChat from "@/components/providers/live-chat";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className=" relative">
+      <body className="relative">
+        <LiveChat />
         <NextThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -31,7 +33,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-          <ScreenSize />
+          {/* <ScreenSize /> */}
         </NextThemeProvider>
       </body>
     </html>

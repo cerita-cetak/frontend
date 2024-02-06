@@ -126,6 +126,20 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@livechat/widget-core@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@livechat/widget-core/-/widget-core-1.3.2.tgz#79c2f16e1e450c352aab83aac7c9d5e8f7b451a4"
+  integrity sha512-yz+p3GKJrcfuD8EGTH5N3dObwcsndbSyqAU7EZ+PCAVrghOUHNbB4fdAPu+EY6iulN9EHieXDu0t8+L2NSaekg==
+  dependencies:
+    mitt "3.0.0"
+
+"@livechat/widget-react@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@livechat/widget-react/-/widget-react-1.3.2.tgz#300b64c47fabd8809960e909a3de865be3834e0d"
+  integrity sha512-Tp4l63BphUBbiwy0gEAQTZ+N3P6RIsmsZEit4UtL4/OxAhH3VuEHoFnddzykHHxoLImbCqMeVQHL7vVI3XU3Rw==
+  dependencies:
+    "@livechat/widget-core" "^1.3.2"
+
 "@next/env@14.0.2":
   version "14.0.2"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.0.2.tgz#c1fb535983bca768e7eccd7b9cf4636127fc6d25"
@@ -1804,6 +1818,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
+
+mitt@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/mitt/-/mitt-3.0.0.tgz#69ef9bd5c80ff6f57473e8d89326d01c414be0bd"
+  integrity sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==
 
 moment@^2.29.4:
   version "2.29.4"
