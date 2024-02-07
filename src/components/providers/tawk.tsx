@@ -7,8 +7,6 @@ export default function TawkChat() {
   const tawkRef: any = useRef();
 
   const handleOnload = () => {
-    // tawkRef.current.visitor();
-
     tawkRef.current.setAttributes(
       {
         name: "nasirin 1",

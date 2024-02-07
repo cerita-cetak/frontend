@@ -1,10 +1,10 @@
 "use client";
 
 import { tButtonNav } from "@/types/button";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
-import { CiHome } from "react-icons/ci";
 import cn from "classnames";
+import Link from "next/link";
 
 export default function NavButton({
   navigate = "#",
@@ -12,16 +12,16 @@ export default function NavButton({
   ...props
 }: tButtonNav) {
   const { push } = useRouter();
+  const pathname = usePathname();
   return (
-    <button
-      {...props}
-      onClick={() => push(navigate)}
-      className={cn("flex flex-col items-center text-white", props.className)}
+    <Link
+      href={"#"}
+      className={cn(
+        " hover:text-text-500 dark:text-text-50 dark:hover:text-text-500",
+        pathname == "/" ? "text-text-500" : "text-text-950",
+      )}
     >
-      <i className="rounded-full bg-white p-1 text-2xl text-purple-800">
-        <CiHome />
-      </i>
-      <small>{name}</small>
-    </button>
+      Home
+    </Link>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Title from "../../atoms/title";
 import Tagline from "../../atoms/tag-line";
 import Button from "../../atoms/button/button";
-import Image from "next/image";
+import Portfolio from "@/components/atoms/card/portfolio";
 
 export default function HeaderHome() {
   return (
@@ -30,40 +30,18 @@ export default function HeaderHome() {
 
       <div className="grid grid-cols-2 gap-8">
         <div id="left-header" className="space-y-3">
-          <PortfolioCard />
-          <PortfolioCard />
-          <PortfolioCard />
-          <PortfolioCard />
+          <Portfolio />
+          <Portfolio />
+          <Portfolio />
+          <Portfolio />
         </div>
         <div id="right-header" className="space-y-3">
-          <PortfolioCard />
-          <PortfolioCard />
-          <PortfolioCard />
-          <PortfolioCard />
+          <Portfolio />
+          <Portfolio />
+          <Portfolio />
+          <Portfolio />
         </div>
       </div>
     </section>
-  );
-}
-
-function PortfolioCard() {
-  return (
-    <div className="relative w-full bg-slate-300">
-      <div className="absolute right-2 top-2 rounded-full bg-main-50 p-1 text-xs font-medium">
-        Wedding
-      </div>
-      <Image
-        src={"https://picsum.photos/200"}
-        alt="image"
-        width={1000}
-        height={1000}
-        className="rounded-md"
-      />
-
-      <div className="absolute inset-x-0 bottom-0 p-3 text-main-50">
-        <p className="font-medium">Nama a dan Nama b</p>
-        <small>Tanggal acara</small>
-      </div>
-    </div>
   );
 }

@@ -3,6 +3,7 @@ import Tagline from "@/components/atoms/tag-line";
 import Title from "@/components/atoms/title";
 import HeaderHome from "@/components/organisms/home/header";
 import { fakerID_ID as faker } from "@faker-js/faker";
+import Image from "next/image";
 import { BiSolidParty } from "react-icons/bi";
 
 export default function Page() {
@@ -11,8 +12,11 @@ export default function Page() {
       {/* header */}
       <HeaderHome />
 
-      {/* Feature */}
-      <section className="container grid grid-cols-1 gap-4 md:h-[500px] md:grid-cols-2">
+      {/* services */}
+      <section
+        id="service"
+        className="container grid grid-cols-1 gap-4 md:h-[500px] md:grid-cols-2"
+      >
         <div className="space-y-8 self-center">
           <Title
             title="Create stunning online invitations with Cerita Cetak&lsquo;s
@@ -33,9 +37,13 @@ export default function Page() {
             <li>Create engaging and memorable online invitations with ease.</li>
           </ul>
         </div>
-        <picture>
-          <img src={faker.image.urlLoremFlickr()} alt="" className="h-full" />
-        </picture>
+        <Image
+          src={faker.image.urlLoremFlickr()}
+          alt="service"
+          width={1000}
+          height={1000}
+          className="h-full"
+        />
       </section>
 
       {/* Feature list */}
@@ -118,7 +126,7 @@ export default function Page() {
       </section> */}
 
       {/* product list */}
-      <section className="container space-y-10">
+      <section className="container space-y-10" id="product">
         <div className="flex flex-col items-center gap-4 text-center">
           <Title title="Products" />
           <Tagline tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
@@ -267,7 +275,7 @@ export default function Page() {
       </section>
 
       {/* pricing */}
-      <section className="container space-y-10">
+      <section className="container space-y-10" id="pricing">
         <div className="flex flex-col items-center gap-4">
           <p className="font-medium">Affordable</p>
           <Title title="Pricing package" />

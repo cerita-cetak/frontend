@@ -2,20 +2,18 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import SubNavbar from "./sub-navbar";
 import useClickOutside from "@/hooks/click-outside";
 import Button from "../atoms/button/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { blocklist } from "@/libs/block-list-pathname";
-
 import NavMobile from "../mollecules/button/nav-mobile";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import DarkLight from "../atoms/button/dark-light";
-import NavBtn from "../atoms/button/nav-btn";
+import NavBtn from "../mollecules/button/nav-list";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -54,15 +52,7 @@ export default function Navbar() {
               isScroll ? "h-10 w-10" : "h-14 w-14",
             )}
             title="Cerita cetak"
-          >
-            {/* <picture>
-              <img
-                src={theme == "dark" ? "/logo-light.svg" : "/logo-dark.svg"}
-                alt="logo"
-              />
-            </picture> */}
-            {/* <Image alt="logo" src={} width={1000} height={1000} /> */}
-          </Link>
+          ></Link>
           <NavBtn onHover={() => setShow(true)} onLeft={() => setShow(false)} />
         </div>
 
