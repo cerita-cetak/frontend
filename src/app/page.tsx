@@ -14,7 +14,7 @@ export default function Page() {
 
       {/* services */}
       <section
-        id="service"
+        id="services"
         className="container grid grid-cols-1 gap-4 md:h-[500px] md:grid-cols-2"
       >
         <div className="space-y-8 self-center">
@@ -107,26 +107,8 @@ export default function Page() {
         <Button variant="outlined">Get Started</Button>
       </section>
 
-      {/* about */}
-      {/* <section className="container grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="space-y-4 self-center">
-          <Title title="Transforming events into unforgettable experiences with our online invitation services." />
-          <Tagline
-            tagline="At Cerita Cetak, we believe in the power of beautifully designed
-            invitations to set the tone for any event. Our team of talented
-            designers and developers work tirelessly to create a wide range of
-            free themes and attractive event packages, ensuring that every user
-            can find the perfect fit for their special occasion. Join us and let
-            us help you make your event truly memorable."
-          />
-        </div>
-        <picture>
-          <img src={faker.image.avatar()} alt="" className="h-full w-full" />
-        </picture>
-      </section> */}
-
       {/* product list */}
-      <section className="container space-y-10" id="product">
+      <section className="container space-y-10" id="templates">
         <div className="flex flex-col items-center gap-4 text-center">
           <Title title="Products" />
           <Tagline tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
@@ -344,111 +326,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      {/* <section
-        style={{ backgroundImage: `url(${faker.image.urlLoremFlickr()})` }}
-        className="relative bg-cover bg-fixed bg-no-repeat p-8 text-white"
-      >
-        <div className="container space-y-8">
-          <Title title="Design your perfect invitation" />
-          <Tagline tagline="Choose from our most popular themes and event packages to create a stunning invitation." />
-
-          <div className="flex items-center gap-3">
-            <Button>Start</Button>
-            <Button variant="outlined" color="white">
-              Explore
-            </Button>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ */}
-      {/* <section className="container space-y-10 py-10">
-        <div className="flex flex-col items-center gap-4">
-          <Title title="FAQs" />
-          <Tagline tagline="Find answers to common questions about invitation customization and the order process." />
-        </div>
-        <ul>
-          <li className="space-y-3 border-y border-black py-3">
-            <div className="peer flex items-center justify-between">
-              <p className="font-medium">How to customize invitations?</p>
-              <i>
-                <IoIosArrowDown />
-              </i>
-            </div>
-            <div>
-              To customize invitations, simply select a theme, add your event
-              details, and choose any additional customization options
-              available. Once you&apos;re satisfied with the design, you can
-              proceed to place your order.
-            </div>
-          </li>
-          <li className="space-y-3 border-b border-black py-3">
-            <div className="peer flex items-center justify-between">
-              <p className="font-medium">
-                Can I preview my design before ordering?
-              </p>
-              <i>
-                <IoIosArrowDown />
-              </i>
-            </div>
-            <div>
-              To customize invitations, simply select a theme, add your event
-              details, and choose any additional customization options
-              available. Once you&apos;re satisfied with the design, you can
-              proceed to place your order.
-            </div>
-          </li>
-          <li className="space-y-3 border-b border-black py-3">
-            <div className="peer flex items-center justify-between">
-              <p className="font-medium">How long does shipping take?</p>
-              <i>
-                <IoIosArrowDown />
-              </i>
-            </div>
-            <div>
-              To customize invitations, simply select a theme, add your event
-              details, and choose any additional customization options
-              available. Once you&apos;re satisfied with the design, you can
-              proceed to place your order.
-            </div>
-          </li>
-          <li className="space-y-3 border-b border-black py-3">
-            <div className="peer flex items-center justify-between">
-              <p className="font-medium">Can I cancel my order?</p>
-              <i>
-                <IoIosArrowDown />
-              </i>
-            </div>
-            <div>
-              To customize invitations, simply select a theme, add your event
-              details, and choose any additional customization options
-              available. Once you&apos;re satisfied with the design, you can
-              proceed to place your order.
-            </div>
-          </li>
-          <li className="space-y-3 border-b border-black py-3">
-            <div className="peer flex items-center justify-between">
-              <p className="font-medium">What payment methods are accepted?</p>
-              <i>
-                <IoIosArrowDown />
-              </i>
-            </div>
-            <div>
-              To customize invitations, simply select a theme, add your event
-              details, and choose any additional customization options
-              available. Once you&apos;re satisfied with the design, you can
-              proceed to place your order.
-            </div>
-          </li>
-        </ul>
-        <div className="flex flex-col items-center gap-4 pt-10">
-          <h2 className="text-2xl font-bold">Still have questions?</h2>
-          <Tagline tagline="Contact our support team for further assistance." />
-          <Button variant="outlined">Contact</Button>
-        </div>
-      </section> */}
     </main>
   );
 }

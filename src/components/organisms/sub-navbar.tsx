@@ -9,12 +9,18 @@ import Link from "next/link";
 export default function SubNavbar({
   show,
   ref,
+  onHover,
+  onLeft,
 }: {
   show?: boolean;
   ref?: any;
+  onHover: () => void;
+  onLeft: () => void;
 }) {
   return (
     <div
+      onMouseEnter={onHover}
+      onMouseLeave={onLeft}
       ref={ref}
       className={cn(
         " absolute inset-x-0 left-0 top-0 overflow-hidden bg-main-50 shadow-md transition-all duration-500 dark:bg-main-950 dark:shadow-main-50",

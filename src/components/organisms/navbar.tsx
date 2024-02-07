@@ -13,7 +13,7 @@ import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import DarkLight from "../atoms/button/dark-light";
-import NavBtn from "../mollecules/button/nav-list";
+import NavManus from "../mollecules/button/nav-menus";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -53,7 +53,25 @@ export default function Navbar() {
             )}
             title="Cerita cetak"
           ></Link>
-          <NavBtn onHover={() => setShow(true)} onLeft={() => setShow(false)} />
+          <NavManus
+            menus={[
+              { href: "/", menu: "Home" },
+              { href: "#services", menu: "Services" },
+              { href: "#templates", menu: "Tamplates" },
+              { href: "#pricing", menu: "Pricing" },
+              {
+                href: "",
+                menu: "Events",
+                isDropdown: true,
+                onHover() {
+                  setShow(true);
+                },
+                onLeft() {
+                  setShow(false);
+                },
+              },
+            ]}
+          />
         </div>
 
         <div className="flex items-center gap-3">
@@ -97,7 +115,11 @@ export default function Navbar() {
       />
 
       <div className=" relative hidden  md:block">
-        <SubNavbar show={show} />
+        <SubNavbar
+          show={show}
+          onHover={() => setShow(true)}
+          onLeft={() => setShow(false)}
+        />
       </div>
     </header>
   );
