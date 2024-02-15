@@ -28,9 +28,7 @@ export default function NavManus({ menus }: tNavBtn) {
               "group/event flex items-center gap-3 text-text-950 hover:text-text-800 dark:text-text-50 dark:hover:text-text-200",
             )}
             onMouseEnter={() => {
-              setTimeout(() => {
-                v.onHover?.();
-              }, 500);
+              v.onHover?.();
             }}
             onMouseLeave={v.onLeft}
           >
