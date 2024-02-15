@@ -38,11 +38,11 @@ export default function Page() {
           </ul>
         </div>
         <Image
-          src={faker.image.urlLoremFlickr()}
+          src={"/images/_93d58b6d-4737-4356-af8d-8f7711ff04c8.jpeg"}
           alt="service"
           width={1000}
           height={1000}
-          className="h-full"
+          className="h-full rounded-xl"
         />
       </section>
 
