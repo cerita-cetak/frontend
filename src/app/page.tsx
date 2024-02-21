@@ -1,4 +1,6 @@
 import Button from "@/components/atoms/button/button";
+import Pricing from "@/components/atoms/card/pricing";
+import Template from "@/components/atoms/card/template";
 import Tagline from "@/components/atoms/tag-line";
 import Title from "@/components/atoms/title";
 import HeaderHome from "@/components/organisms/home/header";
@@ -53,142 +55,42 @@ export default function Page() {
           <Tagline tagline="Undang teman sebanyak mungkin" />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <picture>
-              <img
-                src={faker.image.urlLoremFlickr({ category: "paper" })}
-                alt=""
-                className="aspect-video h-[200px]"
-              />
-            </picture>
-            <div className="text-center">
-              <p className="font-medium">{faker.commerce.productName()}</p>
-              <small>{faker.commerce.product()}</small>
-              <p>{faker.commerce.price()}</p>
-            </div>
-            <Button variant="outlined" width="full">
-              Add to cart
-            </Button>
-          </div>
+          <Template
+            event="wedding"
+            id=""
+            image="https://picsum.photos/200"
+            name="name of template"
+          />
+          <Template
+            event="wedding"
+            id=""
+            image="https://picsum.photos/200"
+            name="name of template"
+          />
+          <Template
+            event="wedding"
+            id=""
+            image="https://picsum.photos/200"
+            name="name of template"
+          />
+          <Template
+            event="wedding"
+            id=""
+            image="https://picsum.photos/200"
+            name="name of template"
+          />
+          <Template
+            event="wedding"
+            id=""
+            image="https://picsum.photos/200"
+            name="name of template"
+          />
+          <Template
+            event="wedding"
+            id=""
+            image="https://picsum.photos/200"
+            name="name of template"
+          />
         </div>
         <div className="flex justify-center">
           <Button>View all</Button>
@@ -198,72 +100,127 @@ export default function Page() {
       {/* pricing */}
       <section className="container space-y-10" id="pricing">
         <div className="flex flex-col items-center gap-4">
-          <p className="font-medium">Affordable</p>
           <Title title="Pricing package" />
           <Tagline tagline="Choose the plan that suits your needs" />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="divide-y divide-neutral-500 rounded-md border border-black p-8">
-            <div className="pb-4">
-              <p className="font-medium">Basic Plan</p>
-              <small>Perfect for small events and gatherings</small>
-            </div>
-            <div className="space-y-4 py-4">
-              <p className="text-2xl font-bold">
-                {faker.commerce.price({ symbol: "Rp", min: 999 })}
-              </p>
-              <Button width="full">Get Started</Button>
-            </div>
-            <div className="pt-4">
-              <ul>
-                <li>package </li>
-                <li>package </li>
-                <li>package </li>
-                <li>package </li>
-              </ul>
-            </div>
-          </div>
-          <div className="divide-y divide-neutral-500 rounded-md border border-black p-8">
-            <div className="pb-4">
-              <p className="font-medium">Basic Plan</p>
-              <small>Perfect for small events and gatherings</small>
-            </div>
-            <div className="space-y-4 py-4">
-              <p className="text-2xl font-bold">
-                {faker.commerce.price({ symbol: "Rp", min: 999 })}
-              </p>
-              <Button width="full">Get Started</Button>
-            </div>
-            <div className="pt-4">
-              <ul>
-                <li>package </li>
-                <li>package </li>
-                <li>package </li>
-                <li>package </li>
-              </ul>
-            </div>
-          </div>
-          <div className="divide-y divide-neutral-500 rounded-md border border-black p-8">
-            <div className="pb-4">
-              <p className="font-medium">Basic Plan</p>
-              <small>Perfect for small events and gatherings</small>
-            </div>
-            <div className="space-y-4 py-4">
-              <p className="text-2xl font-bold">
-                {faker.commerce.price({ symbol: "Rp", min: 999 })}
-              </p>
-              <Button width="full">Get Started</Button>
-            </div>
-            <div className="pt-4">
-              <ul>
-                <li>package </li>
-                <li>package </li>
-                <li>package </li>
-                <li>package </li>
-              </ul>
-            </div>
-          </div>
+          <Pricing
+            label="Basic"
+            slogan="Perfect for small events and gatherings"
+            features={[
+              { feature: "RSVP Online" },
+              { feature: "Desain Custom" },
+              { feature: "Kirim undangan via whatsapp" },
+              { feature: "pengingat otomatis" },
+              { feature: "detail acara" },
+              { feature: "Daftar tamu" },
+              { feature: "kartu ucapan online" },
+              { feature: "tampilan responsive" },
+              { feature: "integrasi dengan kalender" },
+              { feature: "perhitungan balasan" },
+              { feature: "galeri foto" },
+              { feature: "statistik dan analisa" },
+              { feature: "keamanan dan privasi" },
+              { feature: "integrasi media sosial" },
+              { feature: "live streaming acara" },
+              { feature: "peta lokasi interaktif" },
+              { feature: "pertanyaan atau survei" },
+              { feature: "fitur berbagi" },
+              { feature: "video dan musik background" },
+              { feature: "QR code" },
+              { feature: "hadiah atau kupon" },
+              { feature: "pengingat ulang tahun" },
+              { feature: "pilihan bahasa" },
+              { feature: "papan pesan public" },
+            ]}
+            id=""
+            price={123}
+          />
+          <Pricing
+            label="Normal"
+            slogan="Perfect for small events and gatherings"
+            features={[
+              { feature: "RSVP Online" },
+              { feature: "Desain Custom" },
+              { feature: "Kirim undangan via whatsapp" },
+              { feature: "pengingat otomatis" },
+              { feature: "detail acara" },
+              { feature: "Daftar tamu" },
+              { feature: "kartu ucapan online" },
+              { feature: "tampilan responsive" },
+              { feature: "integrasi dengan kalender" },
+              { feature: "perhitungan balasan" },
+              { feature: "galeri foto" },
+              { feature: "statistik dan analisa" },
+              { feature: "keamanan dan privasi" },
+              { feature: "integrasi media sosial" },
+              { feature: "live streaming acara" },
+              { feature: "peta lokasi interaktif" },
+              { feature: "pertanyaan atau survei" },
+              { feature: "fitur berbagi" },
+              { feature: "video dan musik background" },
+              { feature: "QR code" },
+              { feature: "hadiah atau kupon" },
+              { feature: "pengingat ulang tahun" },
+              { feature: "pilihan bahasa" },
+              { feature: "papan pesan public" },
+            ]}
+            id=""
+            price={123}
+          />
+          <Pricing
+            label="Premium"
+            slogan="Perfect for small events and gatherings"
+            features={[
+              { feature: "RSVP Online" },
+              { feature: "Desain Custom" },
+              { feature: "Kirim undangan via whatsapp" },
+              { feature: "pengingat otomatis" },
+              { feature: "detail acara" },
+              { feature: "Daftar tamu" },
+              { feature: "kartu ucapan online" },
+              { feature: "tampilan responsive" },
+              { feature: "integrasi dengan kalender" },
+              { feature: "perhitungan balasan" },
+              { feature: "galeri foto" },
+              { feature: "statistik dan analisa" },
+              { feature: "keamanan dan privasi" },
+              { feature: "integrasi media sosial" },
+              { feature: "live streaming acara" },
+              { feature: "peta lokasi interaktif" },
+              { feature: "pertanyaan atau survei" },
+              { feature: "fitur berbagi" },
+              { feature: "video dan musik background" },
+              { feature: "QR code" },
+              { feature: "hadiah atau kupon" },
+              { feature: "pengingat ulang tahun" },
+              { feature: "pilihan bahasa" },
+              { feature: "papan pesan public" },
+            ]}
+            id=""
+            price={123}
+          />
         </div>
+      </section>
+
+      <section className="container">
+        <Title title="Happy customers" className="mb-3 text-end" />
+        <Tagline
+          tagline="Choose the plan that suits your needs"
+          className="mb-8 text-end"
+        />
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quia
+        quas perferendis. Esse eum deserunt assumenda distinctio! Deserunt
+        deleniti perspiciatis incidunt magni, animi officiis libero repudiandae
+        cupiditate culpa numquam nihil!
+      </section>
+
+      <section className="container">
+        <Title title="Blog" className="text-center" />
+        <Tagline
+          tagline="Choose the plan that suits your needs"
+          className="text-center"
+        />
       </section>
     </main>
   );
