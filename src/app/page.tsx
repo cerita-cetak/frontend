@@ -12,14 +12,45 @@ export default function Page() {
       {/* header */}
       <HeaderHome />
 
+      {/* keunggulan cerita cetak */}
+      {/* 
+      section ini berisikan informasi keunggulan apa saja yang dimiliki.
+      1. kehadiran menggunakan barcode
+      2. RSVP
+      3. cetak undagan dalam berbagai format document. [gambar,pdf,gif]
+      4. mudah mengelola tamu
+      5. responsive for all device
+      6. one click all done, sekali klik semua undangan terkirim ke whatsapp
+       */}
+
       {/* Event list */}
-      <section>event list</section>
+      <section className="container space-y-8">
+        <div>
+          <Title title="Events" />
+          <Tagline tagline="Rayakan acara yang seru bersama teman dan keluarga anda" />
+        </div>
+        <div className="flex justify-between">
+          <ul className="w-3/12 shrink-0">
+            <li>Pernikahan</li>
+            <li>Ulang tahun</li>
+            <li>Acara sukuran</li>
+            <li>Kelulusan</li>
+            <li>Reoni</li>
+          </ul>
+
+          <div className="flex-1">
+            <div>
+              <p>ilustrations</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* product list */}
       <section className="container space-y-10" id="templates">
         <div className="flex flex-col items-center gap-4 text-center">
-          <Title title="Products" />
-          <Tagline tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+          <Title title="Favorit templates" />
+          <Tagline tagline="Undang teman sebanyak mungkin" />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col items-center gap-3">
