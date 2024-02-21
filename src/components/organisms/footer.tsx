@@ -72,7 +72,7 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-3 border-t border-black py-4 md:flex-row">
+      <div className="flex flex-col items-center justify-center gap-3 border-t border-black py-4 dark:border-white md:flex-row">
         <small>© 2023 Cerita Cetak. All rights reserved.</small>
         <small>Privacy Policy</small>
         <small>Terms of Service</small>
