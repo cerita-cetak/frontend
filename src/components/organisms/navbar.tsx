@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import SubNavbar from "./sub-navbar";
-import useClickOutside from "@/hooks/click-outside";
 import Button from "../atoms/button/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
@@ -11,16 +10,14 @@ import { blocklist } from "@/libs/block-list-pathname";
 import NavMobile from "../mollecules/button/nav-mobile";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
-import { useTheme } from "next-themes";
 import DarkLight from "../atoms/button/dark-light";
 import NavManus from "../mollecules/button/nav-menus";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-  const { theme } = useTheme();
   const [showNavMobile, setShowNavMobile] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
-  const clickOutside = useClickOutside(() => setShow(false));
+
   const pathname = usePathname();
 
   useEffect(() => {
@@ -37,7 +34,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 select-none bg-main-50 dark:bg-main-950",
+        "fixed top-0 z-10 select-none bg-main-50 dark:bg-main-950",
         blocklist.includes(pathname) && "hidden",
         isScroll ? "inset-x-0  shadow-sm shadow-main-50 " : "w-6/12 ",
       )}
@@ -56,20 +53,10 @@ export default function Navbar() {
           <NavManus
             menus={[
               { href: "/", menu: "Home" },
-              { href: "#services", menu: "Services" },
+              { href: "#event", menu: "Events" },
               { href: "#templates", menu: "Tamplates" },
               { href: "#pricing", menu: "Pricing" },
-              {
-                href: "",
-                menu: "Events",
-                isDropdown: true,
-                onHover() {
-                  setShow(true);
-                },
-                onLeft() {
-                  setShow(false);
-                },
-              },
+              { href: "#services", menu: "Blog" },
             ]}
           />
         </div>

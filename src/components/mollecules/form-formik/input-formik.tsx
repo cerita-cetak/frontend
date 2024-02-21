@@ -7,8 +7,7 @@ import React from "react";
 import cn from "classnames";
 
 export default function InputFormik({ wfull, name, ...props }: tInputFormik) {
-  const [field, meta, helper] = useField(name);
-
+  const [field, meta, _] = useField(name);
   return (
     <div className={cn("flex flex-col", !wfull && "w-fit")}>
       <Input
@@ -19,7 +18,7 @@ export default function InputFormik({ wfull, name, ...props }: tInputFormik) {
             meta.touched &&
             "border border-red-500 placeholder:text-red-500",
         )}
-        isError={meta.error && meta.error}
+        isError={meta.error && meta.touched}
       />
       <small
         className={cn(

@@ -15,7 +15,7 @@ export default function Input({
       <input
         {...props}
         className={cn(
-          "peer w-full rounded-lg focus:border-green-500 focus:ring-green-500",
+          "peer w-full rounded-lg focus:border-primary-500 focus:ring-primary-500",
           props.className,
           { "pl-8": icon?.start },
           { "pr-8": icon?.end },

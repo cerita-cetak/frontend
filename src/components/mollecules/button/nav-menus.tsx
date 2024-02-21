@@ -16,7 +16,7 @@ export default function NavManus({ menus }: tNavBtn) {
   const pathname = usePathname();
   const { push } = useRouter();
 
-  console.log("needs pathname ", pathname);
+  // console.log("needs pathname ", pathname);
 
   return (
     <ul className="hidden items-center gap-4 font-medium md:flex">

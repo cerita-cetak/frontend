@@ -13,7 +13,7 @@ export default function Checkbox({ label, ...props }: tCheckbox) {
         {...props}
         type="checkbox"
         className={cn(
-          "rounded-sm checked:text-green-500 focus:ring-0",
+          "rounded-sm checked:text-primary-500 focus:ring-0",
           props.className,
         )}
       />

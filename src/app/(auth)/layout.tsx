@@ -1,30 +1,34 @@
 import React, { ReactNode } from "react";
-import { fakerID_ID as faker } from "@faker-js/faker";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <main className="h-screen justify-between lg:flex">
       <section
-        className="hidden w-4/12 shrink-0 bg-cover bg-no-repeat lg:block"
+        className="hidden w-4/12 shrink-0 bg-main-100 bg-cover bg-no-repeat lg:block"
         style={{
-          backgroundImage: `url(${faker.image.urlLoremFlickr({
-            category: "flora",
-          })})`,
+          backgroundImage: `url(https://picsum.photos/200)`,
         }}
       ></section>
-      <section className="relative mx-auto grid h-screen flex-1 grid-cols-1 content-center bg-gray-200">
-        <div className="absolute right-5 top-5 flex items-center gap-3">
-          <p className="text-lg font-medium text-slate-500">
-            {faker.company.name()}
-          </p>
-          <picture>
-            <img
-              src={faker.image.urlLoremFlickr({ category: "company" })}
-              alt=""
-              className="aspect-video w-10 rounded-md"
-            />
-          </picture>
-        </div>
+      <section className="relative mx-auto grid h-screen flex-1 grid-cols-1 content-center">
+        <Link href={"/"} className="absolute right-5 top-5">
+          <Image
+            alt="logo cerita cetak"
+            src={"/logo-light.svg"}
+            width={70}
+            height={70}
+            className="hidden dark:block"
+          />
+          <Image
+            alt="logo cerita cetak"
+            src={"/logo-dark.svg"}
+            width={70}
+            height={70}
+            className="dark:hidden"
+          />
+        </Link>
+
         <div className="mx-auto w-11/12 md:w-5/12">{children}</div>
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center gap-1 py-4 md:bottom-5 md:flex-row md:gap-3">
           <small>© 2023 Cerita Cetak. All rights reserved.</small>
