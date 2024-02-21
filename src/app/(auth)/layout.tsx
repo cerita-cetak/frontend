@@ -12,25 +12,25 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
         }}
       ></section>
       <section className="relative mx-auto grid h-screen flex-1 grid-cols-1 content-center">
-        <Link href={"/"} className="absolute right-5 top-5">
+        <Link href={"/"} className="mx-auto mb-8 mt-8 md:mt-0 ">
           <Image
             alt="logo cerita cetak"
             src={"/logo-light.svg"}
-            width={70}
-            height={70}
-            className="hidden dark:block"
+            width={90}
+            height={90}
+            className="hidden aspect-square rounded-xl border dark:block"
           />
           <Image
             alt="logo cerita cetak"
             src={"/logo-dark.svg"}
-            width={70}
-            height={70}
-            className="dark:hidden"
+            width={90}
+            height={90}
+            className="aspect-square rounded-xl border border-black dark:hidden"
           />
         </Link>
 
         <div className="mx-auto w-11/12 md:w-5/12">{children}</div>
-        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center gap-1 py-4 md:bottom-5 md:flex-row md:gap-3">
+        <div className="inset-x-0 bottom-0 flex flex-col items-center justify-center gap-1 py-4 md:absolute md:bottom-5 md:flex-row md:gap-3">
           <small>© 2023 Cerita Cetak. All rights reserved.</small>
           <small>Privacy Policy</small>
           <small>Terms of Service</small>
