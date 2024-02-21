@@ -4,9 +4,6 @@ import Template from "@/components/atoms/card/template";
 import Tagline from "@/components/atoms/tag-line";
 import Title from "@/components/atoms/title";
 import HeaderHome from "@/components/organisms/home/header";
-import { fakerID_ID as faker } from "@faker-js/faker";
-import Image from "next/image";
-import { BiSolidParty } from "react-icons/bi";
 
 export default function Page() {
   return (

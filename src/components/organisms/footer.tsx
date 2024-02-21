@@ -11,7 +11,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import cn from "classnames";
-import { blocklist } from "@/libs/block-list-pathname";
+import { blocklist } from "@/libs/list-pathname";
 
 export default function Footer() {
   const pathname = usePathname();

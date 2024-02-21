@@ -6,7 +6,7 @@ import SubNavbar from "./sub-navbar";
 import Button from "../atoms/button/button";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
-import { blocklist } from "@/libs/block-list-pathname";
+import { blocklist, conditionPathname } from "@/libs/list-pathname";
 import NavMobile from "../mollecules/button/nav-mobile";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
@@ -20,23 +20,29 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
+  console.log("needs pathname", conditionPathname.includes(pathname), isScroll);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(document.documentElement.scrollTop > 800);
     };
-    setIsScroll(document.documentElement.scrollTop > 800);
+    setIsScroll(
+      conditionPathname.includes(pathname) ||
+        document.documentElement.scrollTop > 800,
+    );
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header
       className={cn(
-        "fixed top-0 z-10 select-none bg-main-50 dark:bg-main-950",
+        conditionPathname.includes(pathname) ? "sticky" : "fixed",
+        "top-0 z-10 select-none bg-main-50 dark:bg-main-950",
         blocklist.includes(pathname) && "hidden",
-        isScroll ? "inset-x-0  shadow-sm shadow-main-50 " : "w-6/12 ",
+        !isScroll ? "w-6/12 " : "inset-x-0 shadow-sm shadow-main-50",
       )}
     >
       {/* tablet above */}
@@ -54,9 +60,9 @@ export default function Navbar() {
             menus={[
               { href: "/", menu: "Home" },
               { href: "#event", menu: "Events" },
-              { href: "#templates", menu: "Tamplates" },
+              { href: "/template-theme", menu: "Tamplates" },
               { href: "#pricing", menu: "Pricing" },
-              { href: "#services", menu: "Blog" },
+              { href: "/blog", menu: "Blog" },
             ]}
           />
         </div>
