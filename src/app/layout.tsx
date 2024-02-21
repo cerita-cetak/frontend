@@ -16,15 +16,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: any;
 }) {
+  // ? ambil pathname from server and send to client
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className="relative">
-        <TawkChat />
+        {/* <TawkChat /> */}
         <NextThemeProvider attribute="class" defaultTheme="light">
-          <Navbar />
+          <Navbar pathname="" />
 
           {children}
           <Footer />

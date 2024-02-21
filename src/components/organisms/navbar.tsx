@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import SubNavbar from "./sub-navbar";
 import Button from "../atoms/button/button";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 import cn from "classnames";
 import { blocklist, conditionPathname } from "@/libs/list-pathname";
 import NavMobile from "../mollecules/button/nav-mobile";
@@ -13,36 +13,43 @@ import { IoClose } from "react-icons/io5";
 import DarkLight from "../atoms/button/dark-light";
 import NavManus from "../mollecules/button/nav-menus";
 
-export default function Navbar() {
+export default function Navbar({ pathname }: { pathname: string }) {
   const [show, setShow] = useState(false);
   const [showNavMobile, setShowNavMobile] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
 
-  const pathname = usePathname();
+  const pn = usePathname();
+  const params = useParams();
 
-  console.log("needs pathname", conditionPathname.includes(pathname), isScroll);
+  // console.log(
+  //   "needs pathname",
+  //   conditionPathname.includes(pn),
+  //   isScroll,
+  //   pn
+  // );
 
   useEffect(() => {
+    if (conditionPathname.includes(pn)) {
+      setIsScroll(true);
+      return;
+    }
     const handleScroll = () => {
       setIsScroll(document.documentElement.scrollTop > 800);
     };
-    setIsScroll(
-      conditionPathname.includes(pathname) ||
-        document.documentElement.scrollTop > 800,
-    );
+    setIsScroll(document.documentElement.scrollTop > 800);
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+  }, [pn]);
 
   return (
     <header
       className={cn(
-        conditionPathname.includes(pathname) ? "sticky" : "fixed",
+        !isScroll ? "fixed" : "sticky",
         "top-0 z-10 select-none bg-main-50 dark:bg-main-950",
-        blocklist.includes(pathname) && "hidden",
-        !isScroll ? "w-6/12 " : "inset-x-0 shadow-sm shadow-main-50",
+        blocklist.includes(pn) && "hidden",
+        !isScroll ? "w-6/12 " : "inset-x-0 ",
       )}
     >
       {/* tablet above */}
@@ -59,9 +66,9 @@ export default function Navbar() {
           <NavManus
             menus={[
               { href: "/", menu: "Home" },
-              { href: "#event", menu: "Events" },
+              { href: "/#event", menu: "Events" },
               { href: "/template-theme", menu: "Tamplates" },
-              { href: "#pricing", menu: "Pricing" },
+              { href: "/#pricing", menu: "Pricing" },
               { href: "/blog", menu: "Blog" },
             ]}
           />

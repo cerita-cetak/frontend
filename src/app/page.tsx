@@ -90,7 +90,7 @@ export default function Page() {
           />
         </div>
         <div className="flex justify-center">
-          <Button>View all</Button>
+          <Button navigate="/template-theme">View all</Button>
         </div>
       </section>
 
